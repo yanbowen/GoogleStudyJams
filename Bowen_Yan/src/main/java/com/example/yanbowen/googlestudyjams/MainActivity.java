@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 /**
@@ -33,9 +34,19 @@ public class MainActivity extends ActionBarActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
+        String name = "NO Name";
+        EditText nameField = (EditText) findViewById(R.id.name_field);
+        if (!nameField.getText().toString().equals("")) {
+            name = nameField.getText().toString();
+        }
+
         CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
         Boolean haswhippedCream = whippedCreamCheckBox.isChecked();
-        displayMessage(createOrderSummary(calculatePrice(), haswhippedCream));
+
+        CheckBox chocolateCheckBox = (CheckBox) findViewById(R.id.chocolate_checkbox);
+        Boolean haschocolate = chocolateCheckBox.isChecked();
+
+        displayMessage(createOrderSummary(name, haswhippedCream, haschocolate, calculatePrice(haswhippedCream, haschocolate)));
     }
 
     /**
@@ -43,8 +54,17 @@ public class MainActivity extends ActionBarActivity {
      *
      * @return total price
      */
-    private int calculatePrice() {
-        return quantity * 5;
+    private int calculatePrice(boolean addwhippedCream, boolean addchocolate) {
+        int basePrice = 5;
+
+        if (addwhippedCream) {
+            basePrice = basePrice + 1;
+        }
+
+        if (addchocolate) {
+            basePrice = basePrice + 2;
+        }
+        return basePrice;
     }
 
     /**
@@ -54,8 +74,8 @@ public class MainActivity extends ActionBarActivity {
      * @param haswhippedCream whether there is whipped Cream
      * @return text summary
      */
-    private String createOrderSummary(int price, boolean haswhippedCream) {
-        String priceMessage = "Name: Bowen Yan" + "\nAdd whipped cream? " + haswhippedCream + "\nQuantity: " + quantity + "\nAmount Due $ " + price + "\nThank you !";
+    private String createOrderSummary(String name, boolean haswhippedCream, boolean haschocolate, int price) {
+        String priceMessage = "Name: " + name + "\nAdd Whipped Cream? " + haswhippedCream + "\nAdd Chocolate? " + haschocolate + "\nQuantity: " + quantity + "\nAmount Due $ " + price + "\nThank you !";
         return priceMessage;
     }
 
