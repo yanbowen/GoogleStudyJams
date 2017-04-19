@@ -1,19 +1,19 @@
-package com.example.yanbowen.googlestudyjams;
+#IDEA的笔记L3  
+---
 
-import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
-import android.view.View;
-import android.widget.CheckBox;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
+###知识总结  
 
-/**
- * This app displays an order form to order coffee.
- */
-public class MainActivity extends ActionBarActivity {
+###编译后运行效果图：
+![](http://i.imgur.com/chtaaxO.png)
 
-    private int quantity = 2;
+### MainActivity代码  
+
+	/**
+	 * This app displays an order form to order coffee.
+	 */
+	public class MainActivity extends ActionBarActivity {
+
+    private int quantity = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,19 +22,11 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void increment(View view) {
-        if (quantity == 100) {
-            Toast.makeText(this, "喝这么多你会睡不着觉的！！！", Toast.LENGTH_SHORT).show();
-            return;
-        }
         quantity = quantity + 1;
         display(quantity);
     }
 
     public void decrement(View view) {
-        if (quantity == 1) {
-            Toast.makeText(this, "就剩一杯了你还想怎么样！！！", Toast.LENGTH_SHORT).show();
-            return;
-        }
         quantity = quantity - 1;
         display(quantity);
     }
@@ -73,7 +65,7 @@ public class MainActivity extends ActionBarActivity {
         if (addchocolate) {
             basePrice = basePrice + 2;
         }
-        return basePrice * quantity;
+        return basePrice;
     }
 
     /**
@@ -102,4 +94,4 @@ public class MainActivity extends ActionBarActivity {
         quantityTextView.setText("" + number);
     }
 
-}
+	}
