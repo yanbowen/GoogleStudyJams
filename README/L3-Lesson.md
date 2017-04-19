@@ -4,8 +4,8 @@
 ###知识总结  
 
 ###编译后运行效果图：
-![](http://i.imgur.com/Awh5YKt.png)  
-![](http://i.imgur.com/MxNDHC4.png)
+![](http://i.imgur.com/c39d1Wt.png)  
+![](http://i.imgur.com/qCiP8ks.png)
 
 ### MainActivity代码  
 
@@ -133,13 +133,9 @@
 
             <TextView
                 android:id="@+id/toppings_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/HeaderTextStyle"
                 android:layout_below="@+id/name_field"
-                android:layout_marginTop="12dp"
-                android:text="Toppings"
-                android:textAllCaps="true"
-                android:textSize="18sp" />
+                android:text="Toppings" />
 
             <CheckBox
                 android:id="@+id/whipped_cream_checkbox"
@@ -167,13 +163,9 @@
 
             <TextView
                 android:id="@+id/quantity_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/HeaderTextStyle"
                 android:layout_below="@+id/chocolate_checkbox"
-                android:layout_marginTop="12dp"
-                android:text="Quantity"
-                android:textAllCaps="true"
-                android:textSize="18sp" />
+                android:text="Quantity" />
 
             <LinearLayout
                 android:id="@+id/linear_layout_view_group"
@@ -226,3 +218,30 @@
         </RelativeLayout>
     </ScrollView>
 	</LinearLayout>
+
+### Styles代码  
+    <resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#009688</item>
+        <item name="colorPrimaryDark">#00796B</item>
+        <item name="colorAccent">#536DFE</item>
+    </style>
+    
+    <style name="CustomText">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#4527A0</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="HeaderTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+	</resources>
