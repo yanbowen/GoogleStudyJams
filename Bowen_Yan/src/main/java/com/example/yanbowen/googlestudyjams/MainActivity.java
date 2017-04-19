@@ -1,5 +1,7 @@
 package com.example.yanbowen.googlestudyjams;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
@@ -55,7 +57,15 @@ public class MainActivity extends ActionBarActivity {
         CheckBox chocolateCheckBox = (CheckBox) findViewById(R.id.chocolate_checkbox);
         Boolean haschocolate = chocolateCheckBox.isChecked();
 
-        displayMessage(createOrderSummary(name, haswhippedCream, haschocolate, calculatePrice(haswhippedCream, haschocolate)));
+        String message = createOrderSummary(name, haswhippedCream, haschocolate, calculatePrice(haswhippedCream, haschocolate));
+
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:"));
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Just Java order for " + name);
+        intent.putExtra(Intent.EXTRA_TEXT, message);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
     }
 
     /**
@@ -86,11 +96,6 @@ public class MainActivity extends ActionBarActivity {
     private String createOrderSummary(String name, boolean haswhippedCream, boolean haschocolate, int price) {
         String priceMessage = "Name: " + name + "\nAdd Whipped Cream? " + haswhippedCream + "\nAdd Chocolate? " + haschocolate + "\nQuantity: " + quantity + "\nAmount Due $ " + price + "\nThank you !";
         return priceMessage;
-    }
-
-    private void displayMessage(String message) {
-        TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
-        orderSummaryTextView.setText(message);
     }
 
     /**
