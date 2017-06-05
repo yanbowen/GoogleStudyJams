@@ -22,7 +22,9 @@
 
         <activity android:name="com.example.yanbowen.myapplication.TwoActivity" />
 
-        <activity android:name="com.example.yanbowen.instancestate.InstanceState">
+        <activity android:name="com.example.yanbowen.instancestate.InstanceState"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -22,6 +22,7 @@ public class OneActivity extends Activity {
     public void MyButton(View view){
 
         Intent intent = new Intent(this,TwoActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
 

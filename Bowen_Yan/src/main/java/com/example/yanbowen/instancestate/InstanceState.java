@@ -1,5 +1,6 @@
 package com.example.yanbowen.instancestate;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -23,7 +24,7 @@ public class InstanceState extends AppCompatActivity {
     }
 
     /**
-     * 推荐接收位置在onRestoreInstanceState，以为onRestoreInstanceState一旦被调用说明
+     * 推荐接收位置在onRestoreInstanceState，因为onRestoreInstanceState一旦被调用说明
      * @param savedInstanceState 一定非空！
      */
     @Override
@@ -31,5 +32,11 @@ public class InstanceState extends AppCompatActivity {
         super.onRestoreInstanceState(savedInstanceState);
         String test = (String) savedInstanceState.get("extra_test");
         Log.d(TAG,"[onRestoreInstanceState]restore extra_test:" + test);
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        Log.d(TAG,"onConfigurationChanged, newOrientation:" + newConfig.orientation);
     }
 }
