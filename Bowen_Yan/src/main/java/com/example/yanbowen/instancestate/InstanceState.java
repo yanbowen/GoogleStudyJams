@@ -1,9 +1,11 @@
 package com.example.yanbowen.instancestate;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 
 import com.example.yanbowen.googlestudyjams.R;
 
@@ -38,5 +40,17 @@ public class InstanceState extends AppCompatActivity {
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         Log.d(TAG,"onConfigurationChanged, newOrientation:" + newConfig.orientation);
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        Log.d(TAG,"onNewIntent, time:" + intent.getLongExtra("time",0));
+    }
+
+    public void myButton(View view){
+        Intent intent = new Intent(this,InstanceState.class);
+        intent.putExtra("time",System.currentTimeMillis());
+        startActivity(intent);
     }
 }
