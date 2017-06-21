@@ -40,4 +40,4 @@
 * Intent可以没有category，但如果一旦有，不管有几个，每个都要能够和过滤规则中的任何一个category相同
 * data由两部分组成，mimeType和URI。mimeType指媒体类型，比如image、JPEG、video等  
 1.显示启动：用于启动同一个应用中的Activity，效率高  
-2.隐式启动：用于启动不同应用中的Activity  
+2.隐式启动：用于启动不同应用中的Activity
