@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Bowen_Yan/Bowen_Yan.iml" filepath="$PROJECT_DIR$/Bowen_Yan/Bowen_Yan.iml" />
       <module fileurl="file://$PROJECT_DIR$/GoogleStudyJams.iml" filepath="$PROJECT_DIR$/GoogleStudyJams.iml" />
+      <module fileurl="file://$PROJECT_DIR$/aidlactivity/aidlactivity.iml" filepath="$PROJECT_DIR$/aidlactivity/aidlactivity.iml" />
     </modules>
   </component>
 </project>

@@ -1,1 +1,1 @@
-include ':Bowen_Yan'
+include ':Bowen_Yan', ':aidlactivity'
