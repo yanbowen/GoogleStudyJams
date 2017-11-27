@@ -14,15 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <service
-            android:name="com.ipc.aidl.AIDLService"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.ipc.aidl" />
 
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </service>
         //This is example
         <activity android:name=".MainActivity" />
         <activity android:name="com.example.yanbowen.myapplication.OneActivity" />
@@ -31,22 +23,13 @@
             android:name="com.example.yanbowen.instancestate.InstanceState"
             android:configChanges="orientation|screenSize"
             android:launchMode="singleTask">
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
-
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
-        </activity>
-        <activity
-            android:name="com.ipc.aidl.MainActivity"
-            android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

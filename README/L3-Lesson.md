@@ -1,9 +1,9 @@
-#IDEA的笔记L3  
+# IDEA的笔记L3  
 ---
 
-###知识总结  
+### 知识总结  
 
-###编译后运行效果图：
+### 编译后运行效果图：
 ![](http://i.imgur.com/c39d1Wt.png)  
 ![](http://i.imgur.com/qCiP8ks.png)
 

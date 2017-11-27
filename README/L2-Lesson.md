@@ -1,10 +1,10 @@
-#IDEA的笔记L2  
+# IDEA的笔记L2  
 ---
 
-###知识总结  
+### 知识总结  
 	android:textAllCaps="true"  
 	变量作用域 ： Variable scope  
-###个人觉得视频里的布局太丑了，所有自己改了下：
+### 个人觉得视频里的布局太丑了，所有自己改了下：
 ![](http://i.imgur.com/S1ROAck.png)   
 
 ### MainActivity代码  
@@ -60,7 +60,7 @@
         	priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
     	}
 	}
-####@SuppressLint("NewApi"）和@TargetApi()的区别  
+#### @SuppressLint("NewApi"）和@TargetApi()的区别  
 在Android代码中，我们有时会使用比我们在AndroidManifest中设置的android:minSdkVersion版本更高的方法，此时编译器会提示警告，解决方法是在方法上加上@SuppressLint("NewApi"）或者@TargetApi()。  
 
 那他们之间有什么区别呢，很简单，
@@ -80,5 +80,5 @@
 	} else {// Pre GINGERBREAD  
             //  some code
 	}   
-####java转义字符表  
+#### java转义字符表  
 ![](http://i.imgur.com/fHPfLRw.png)   

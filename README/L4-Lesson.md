@@ -1,12 +1,12 @@
-#IDEA的笔记L3  
+# IDEA的笔记L4  
 ---
 
-###知识总结  
+### 知识总结  
 
-###项目关联firebase后平台运行展示图：
-####Firebase项目展示
+### 项目关联firebase后平台运行展示图：
+#### Firebase项目展示
 ![](http://i.imgur.com/25Pq6ml.png)  
-####项目状态分析
+#### 项目状态分析
 ![](http://i.imgur.com/7gdcRcD.png)
 ![](http://i.imgur.com/SQHIoh3.png)
 
@@ -81,7 +81,7 @@
     compile 'com.google.firebase:firebase-crash:9.6.1'
 	}
   
-###项目下build.gradle代码  
+### 项目下build.gradle代码  
     // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 	buildscript {
